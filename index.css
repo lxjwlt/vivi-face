@@ -1,0 +1,136 @@
+.vivi-face,
+.vivi-face * {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.vivi-face {
+    animation: 5s linear infinite shake;
+}
+
+.vivi-face,
+.vivi-face_layer {
+    transform-style: preserve-3d;
+    transform-origin: center;
+    perspective: 1000px;
+}
+
+.vivi-face_layer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.vivi-face_layer .vivi-face_layer {
+    transform: translateZ(30px);
+}
+
+.vivi-face_face {
+    width: 100%;
+    height: 100%;
+    border: 8px solid #afafaf;
+    border-radius: 50%;
+}
+
+.vivi-face_mouth {
+    width: 25%;
+    height: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 135px;
+    margin: auto;
+    border: 4px solid #afafaf;
+    border-radius: 4px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    animation: 1s linear infinite alternate smile;
+}
+
+.vivi-face_nose {
+    width: 8px;
+    height: 15%;
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-50%);
+    background-color: #afafaf;
+    border-radius: 4px;
+}
+
+.vivi-face_left-eye,
+.vivi-face_right-eye {
+    width: 8px;
+    height: 10%;
+    position: absolute;
+    top: 70px;
+    border-radius: 4px;
+    background-color: #afafaf;
+    animation: 3.8s linear infinite blink;
+}
+
+.vivi-face_left-eye {
+    left: 50px;
+}
+
+.vivi-face_right-eye {
+    right: 50px;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    20% {
+        transform: rotateY(20deg);
+    }
+
+    40% {
+        transform: rotateY(-20deg);
+    }
+
+    60% {
+        transform: rotateY(20deg);
+    }
+
+    80% {
+        transform: rotateY(-20deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes smile {
+    0% {
+        height: 8px;
+        border-width: 4px;
+    }
+
+    100% {
+        height: 30px;
+        border-width: 8px;
+    }
+}
+
+@keyframes blink {
+    0% {
+        transform: scaleY(1);
+    }
+
+    96% {
+        transform: scaleY(1);
+    }
+
+    98% {
+        transform: scaleY(0.2);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
